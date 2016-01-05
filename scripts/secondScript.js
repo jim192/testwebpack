@@ -1,0 +1,1 @@
+window.b="value from secondScript.js";
