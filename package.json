@@ -8,9 +8,12 @@
     "start": "webpack --watch"
   },
   "author": "HU MingYang",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies":{
   	"css-loader":"^0.23.1",
-  	"style-loader":"^0.13.0"
+  	"style-loader":"^0.13.0",
+    "extract-text-webpack-plugin": "^1.0.0",
+    "webpack": "^1.12.9",
+    "webpack-sources": "^0.1.0"
   }
 }
