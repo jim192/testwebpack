@@ -1,15 +1,9 @@
 # testwebpack
 #运行
-Demo1： $ webpack .scripts/entryDemo1.js bundle.js
-Demo2： $ webpack .scripts/entryDemo2.js bundle.js
-Demo3:  $ npm install css-loader style-loader
-	    $ webpack ./scripts/entryDemo3.js bundle.js
-Demo4:  $ webpack ./scripts/entryDemo4.js bundle.js --module-bind "css=style\!css"
-		//css=style\!css 这里官方文档有错误，应该加 \
-Demo5: 	add webpack.config.js
-		$webpack
+# $webpack
+#		//在 tmp 目录下生成 entryfirst.js, entrysecond.js, entrythree.js。
+#
+#Note:	 extract-text-webpack-plugin 插件缺少 webpack-sources 依赖，因为 github 上未添加。
+		需要手动在/node_modules/extract-text-webpack-plugin/package.json 中添加 "webpack-sources": "^0.1.0"。
+		暂时每次 clone 此项目之后，先运行 $npm install webpack-sources
 		
-codeSplitting.js:  $webpack
-		//生成 bundle.js, 1.bundle.js, 2.bundle.js。在 console 中，可以输出 b 的值，但是无 a 的值（未执行）
-
-Demo7:

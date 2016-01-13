@@ -1,15 +1,28 @@
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
-	entry:'./scripts/codeSplitting.js',
+	entry:{
+		entryfirst: "./scripts/entryOne/entry1",
+		entrysecond: "./scripts/entryTwo/entry2",
+		entrythree: "./scripts/entryThree/entry3"
+	},
 	output:{
-		path: __dirname + "/tmp",
-		filename:"bundle.js",
+		path: __dirname + "/tmp/",
+		filename:"[name].js",
+		chunkFilename: "[id].js",
 		publicPath:__dirname+"/tmp/"
 	},
 	module:{
 		loaders:[
-			{test:/\.css$/,loader:"style!css"}
+		//Extract css file
+			{test:/\.css$/,loader:ExtractTextPlugin.extract("style-loader","css-loader")},
+		//Extract less file
+			{test:/\.less$/,loader:ExtractTextPlugin.extract("style-loader","css-loader!less-loader")}
+		//Use other loaders the same way.
 		]
-	}
-	//multi
+	},
+	//Use the plugin to specify the resulting filename and add needed behavior to the compiler
+	plugins:[
+		new ExtractTextPlugin("[name].css")
+	]
 
 };
