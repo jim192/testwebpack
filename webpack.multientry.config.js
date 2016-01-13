@@ -5,7 +5,8 @@ module.exports = {
 		entrysecond: ".\\scripts\\entryTwo\\entry2",
 		entrythree: ".\\scripts\\entryThree\\entry3",
 		entryfour:".\\scripts\\entryFour\\entry4",
-		entryfive:".\\scripts\\entryFive\\entry5"
+		entryfive:".\\scripts\\entryFive\\entry5",
+		entrysix:".\\scripts\\entrySix\\entry6"
 	},
 	output:{
 		path: __dirname + "/tmp/",
@@ -24,6 +25,7 @@ module.exports = {
 	},
 	//Use the plugin to specify the resulting filename and add needed behavior to the compiler
 	plugins:[
+		//the stylesheets' output file named "[name].css"
 		new ExtractTextPlugin("[name].css")
 	]
 
