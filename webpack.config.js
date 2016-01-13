@@ -1,15 +1,17 @@
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
 	entry:{
-		entryfirst: "./scripts/entryOne/entry1",
-		entrysecond: "./scripts/entryTwo/entry2",
-		entrythree: "./scripts/entryThree/entry3"
+		entryfirst: ".\\scripts\\entryOne\\entry1",
+		entrysecond: ".\\scripts\\entryTwo\\entry2",
+		entrythree: ".\\scripts\\entryThree\\entry3",
+		entryfour:".\\scripts\\entryFour\\entry4",
+		entryfive:".\\scripts\\entryfive\\entry5"
 	},
 	output:{
 		path: __dirname + "/tmp/",
 		filename:"[name].js",
 		chunkFilename: "[id].js",
-		publicPath:__dirname+"/tmp/"
+		publicPath:"/styles/"
 	},
 	module:{
 		loaders:[
