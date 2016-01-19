@@ -56,6 +56,18 @@ gulp.task('usewebpack',function(callback){
 	});
 });
 
+gulp.task('usewebpackcommon', ['clean:tmp'],function(callback){
+	var myConfig = Object.create(require("./webpack.commonplug.config.js"));
+	webpack(myConfig,function(err,stats){
+		console.log("running usewebpackcommon...");
+		if(err) throw new gutil.PluginError('webpack',err);
+		gutil.log("[webpack]",stats.toString({
+			//output options
+		}));
+		callback();
+	});
+});
+
 gulp.task('webpack-dev-server',function(callback){	
 	// var compiler = webpack({
 	// 	//configuration

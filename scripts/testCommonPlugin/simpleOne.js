@@ -1,3 +1,3 @@
-window.a="value from firstScript.js";
-module.exports="It works from content.";
+require('./simplecommon');
 var mystr="value from simpleOne";
+console.log(mystr);
