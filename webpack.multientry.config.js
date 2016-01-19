@@ -11,6 +11,8 @@ module.exports = {
 	output:{
 		path: __dirname + "/tmp/",
 		filename:"[name].js",
+		//filename:"[name]/[name].js",
+		//根据 [name] 输出到命名为 [name] 的文件夹下
 		chunkFilename: "[id].js",
 		publicPath:"/styles/"
 	},

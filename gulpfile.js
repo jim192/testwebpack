@@ -68,6 +68,18 @@ gulp.task('usewebpackcommon', ['clean:tmp'],function(callback){
 	});
 });
 
+gulp.task('uglifyJSplug',['clean:tmp'],function(cb){
+	var myConfig = Object.create(require("./webpack.config.min.js"));
+	webpack(myConfig,function(err,stats){
+		console.log("running uglifyJS-plug...");
+		if(err) throw new gutil.PluginError('webpack',err);
+		gutil.log("[webpack]",stats.toString({
+			//output options
+		}));
+		cb();
+	});
+});
+
 gulp.task('webpack-dev-server',function(callback){	
 	// var compiler = webpack({
 	// 	//configuration
