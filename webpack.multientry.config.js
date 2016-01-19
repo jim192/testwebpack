@@ -22,8 +22,25 @@ module.exports = {
 			{test:/\.css$/,loader:ExtractTextPlugin.extract("style-loader","css-loader")},
 		//Extract less file
 			{test:/\.less$/,loader:ExtractTextPlugin.extract("style-loader","css-loader!less-loader")}
-		//Use other loaders the same way.
+		//Use other loaders the same way.			
 		]
+		//using file-loader to output files in different directory began
+		// loaders:[
+		// //Extract css file
+		// 	{
+		// 		test:/\.css$/,loader:[ExtractTextPlugin.extract("style-loader","css-loader")]},
+		// //Extract less file
+		// 	{test:/\.less$/,loader:ExtractTextPlugin.extract("style-loader","css-loader!less-loader")},
+		// //Use other loaders the same way.	
+		// 	{
+		// 		test:/\.js$/,
+		// 		loader: 'file-loader?name=js/[name].js'
+		// 		//entry1-6 will be copied, and output in tmp/js directory
+		// 		//the output file ([name].js) will in tmp instead of tmp/js
+		// 	}
+		// ]
+		//using file-loader to output files in different directory end
+
 	},
 	//Use the plugin to specify the resulting filename and add needed behavior to the compiler
 	plugins:[
