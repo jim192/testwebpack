@@ -17,14 +17,14 @@ Demo5: 	add file "webpack.config.js"
 codeSplitting:  `$webpack`  
 		生成 bundle.js, 1.bundle.js, 2.bundle.js。在 console 中，可以输出 b 的值，但是无 a 的值（未执行）  
 
-$gulp usewebpackstream  
-	gulp 使用 webpack-stream, 调用 webpack 的功能  
+`$gulp usewebpackstream  `
+	gulp 使用 `webpack-stream`, 调用 webpack 的功能  
 
-$gulp usewebpack  
-	gulp 运行 webpack，且调用 webpack.multientry.config.js 的配置  
+`$gulp usewebpack`  
+	gulp 运行 webpack，且调用 `webpack.multientry.config.js` 的配置  
 	
-$gulp usewebpackcommon  
-	执行($webpack --config webpack.commonplug.config.js)  
+`$gulp usewebpackcommon`  
+	执行`$webpack --config webpack.commonplug.config.js`  
 	1. 使用 commonPlug1 时，会生成simplecommon.js（仅包含公共引用部分） simpleA.js（仅包含 simpleOne.js 中的内容） simpleB.js（仅包含 simpleTwo.js 中的内容）。  
 	2. 使用 commonPlug 时，会生成 simpleA.js/simpleB.js/simpleC.js（包含对应 js 的独有内容和独自引用的内容），simpleD.js（包含对应内容和全部引用的内容） common.js（包含公共的 simplecommon.js 的内容） 。似乎提取公共部分的代码，最后一个待提取的 chunk 会包含对应内容和全部引用的内容 
 
