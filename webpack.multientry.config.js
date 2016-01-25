@@ -1,8 +1,11 @@
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
 	entry:{
-		entryfirst: ".\\scripts\\entryOne\\entry1",
-		entrysecond: ".\\scripts\\entryTwo\\entry2",
+		"js/entryfirst": ".\\scripts\\entryOne\\entry1",
+		"js/entrysecond": ".\\scripts\\entryTwo\\entry2",
+		// "js/entryfirst": ".\\scripts\\entryOne\\entry1",
+		// "js/entrysecond": ".\\scripts\\entryTwo\\entry2",
+		// 输出到 tmp/js/ 目录下
 		entrythree: ".\\scripts\\entryThree\\entry3",
 		entryfour:".\\scripts\\entryFour\\entry4",
 		entryfive:".\\scripts\\entryFive\\entry5",
